@@ -1,6 +1,6 @@
 ### Hospital Custom
 
-Uzima Hospital System
+Custom finance extensions for st Scholastica Uzima Hospital
 
 ### Installation
 

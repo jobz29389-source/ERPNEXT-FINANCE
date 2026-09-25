@@ -1,7 +1,7 @@
 app_name = "hospital_custom"
 app_title = "Hospital Custom"
 app_publisher = "Job Mutuma"
-app_description = "Uzima Hospital System"
+app_description = "Custom finance extensions for st Scholastica Uzima Hospital"
 app_email = "jobz29389@gmail.com"
 app_license = "mit"
 

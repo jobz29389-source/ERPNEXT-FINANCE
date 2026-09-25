@@ -3,7 +3,7 @@ name = "hospital_custom"
 authors = [
     { name = "Job Mutuma", email = "jobz29389@gmail.com"}
 ]
-description = "Uzima Hospital System"
+description = "Custom finance extensions for st Scholastica Uzima Hospital"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]
