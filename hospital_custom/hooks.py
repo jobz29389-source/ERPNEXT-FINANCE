@@ -253,3 +253,14 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+fixtures = [
+    {"dt": "Custom Field", "filters": [["module", "in", ["Hospital Custom"]]]},
+    {"dt": "Property Setter", "filters": [["module", "in", ["Hospital Custom"]]]},
+    {"dt": "Server Script"},
+    {"dt": "DocType", "filters": [["module", "=", "Hospital Custom"]]},
+    {"dt": "Income Tax Slab"},
+    {"dt": "Salary Component"},
+    {"dt": "Salary Structure"},
+    {"dt": "Customer", "filters": [["name", "in", ["SHA", "CIC Insurance", "Kenyatta University Staff Medical Scheme"]]]},
+    {"dt": "Item", "filters": [["name", "like", "SHA %"], ["name", "like", "CIC %"], ["name", "like", "KU %"]]},
+]

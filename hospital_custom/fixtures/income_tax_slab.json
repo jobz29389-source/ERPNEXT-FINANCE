@@ -1,0 +1,64 @@
+[
+ {
+  "allow_tax_exemption": 0,
+  "amended_from": null,
+  "company": "St. Scholastica Uzima Hospital",
+  "currency": "KES",
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Income Tax Slab",
+  "effective_from": "2026-01-01",
+  "modified": "2026-09-30 10:52:25.629566",
+  "name": "Kenya PAYE 2026",
+  "other_taxes_and_charges": [],
+  "slabs": [
+   {
+    "condition": null,
+    "from_amount": 0.0,
+    "parent": "Kenya PAYE 2026",
+    "parentfield": "slabs",
+    "parenttype": "Income Tax Slab",
+    "percent_deduction": 10.0,
+    "to_amount": 24000.0
+   },
+   {
+    "condition": null,
+    "from_amount": 24000.0,
+    "parent": "Kenya PAYE 2026",
+    "parentfield": "slabs",
+    "parenttype": "Income Tax Slab",
+    "percent_deduction": 25.0,
+    "to_amount": 32333.0
+   },
+   {
+    "condition": null,
+    "from_amount": 32333.0,
+    "parent": "Kenya PAYE 2026",
+    "parentfield": "slabs",
+    "parenttype": "Income Tax Slab",
+    "percent_deduction": 30.0,
+    "to_amount": 500000.0
+   },
+   {
+    "condition": null,
+    "from_amount": 500000.0,
+    "parent": "Kenya PAYE 2026",
+    "parentfield": "slabs",
+    "parenttype": "Income Tax Slab",
+    "percent_deduction": 32.5,
+    "to_amount": 800000.0
+   },
+   {
+    "condition": null,
+    "from_amount": 800000.0,
+    "parent": "Kenya PAYE 2026",
+    "parentfield": "slabs",
+    "parenttype": "Income Tax Slab",
+    "percent_deduction": 35.0,
+    "to_amount": 0.0
+   }
+  ],
+  "standard_tax_exemption_amount": 0.0,
+  "tax_relief_limit": 0.0
+ }
+]
