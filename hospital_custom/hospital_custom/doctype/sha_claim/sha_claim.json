@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SHA-{#####}",
+ "creation": "2026-09-27 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_name",
+  "sales_invoice",
+  "claim_number",
+  "service_type",
+  "date_of_service",
+  "amount_claimed",
+  "amount_approved",
+  "status",
+  "submission_date",
+  "rejection_reason",
+  "resubmission_count",
+  "payment_date",
+  "supporting_documents"
+ ],
+ "fields": [
+  {"fieldname": "patient_name", "fieldtype": "Data", "label": "Patient Name", "reqd": 1},
+  {"fieldname": "sales_invoice", "fieldtype": "Link", "label": "Sales Invoice", "options": "Sales Invoice"},
+  {"fieldname": "claim_number", "fieldtype": "Data", "label": "Claim Number"},
+  {"fieldname": "service_type", "fieldtype": "Select", "label": "Service Type", "options": "Outpatient\nInpatient\nMaternity\nLaboratory\nPharmacy"},
+  {"fieldname": "date_of_service", "fieldtype": "Date", "label": "Date of Service", "reqd": 1},
+  {"fieldname": "amount_claimed", "fieldtype": "Currency", "label": "Amount Claimed", "reqd": 1},
+  {"fieldname": "amount_approved", "fieldtype": "Currency", "label": "Amount Approved"},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Draft\nSubmitted\nUnder Review\nApproved\nRejected\nPaid", "default": "Draft"},
+  {"fieldname": "submission_date", "fieldtype": "Date", "label": "Submission Date"},
+  {"fieldname": "rejection_reason", "fieldtype": "Small Text", "label": "Rejection Reason"},
+  {"fieldname": "resubmission_count", "fieldtype": "Int", "label": "Resubmission Count", "default": "0"},
+  {"fieldname": "payment_date", "fieldtype": "Date", "label": "Payment Date"},
+  {"fieldname": "supporting_documents", "fieldtype": "Attach", "label": "Supporting Documents"}
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-27 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Hospital Custom",
+ "name": "SHA Claim",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
