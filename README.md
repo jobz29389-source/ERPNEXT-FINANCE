@@ -1,41 +1,41 @@
 ### Hospital Custom
 
 Custom finance extensions for st Scholastica Uzima Hospital
+# Hospital Custom — St. Scholastica Uzima Hospital
 
-### Installation
+Custom Frappe/ERPNext app for St. Scholastica Uzima Hospital (SSUH), Nairobi, Kenya.
+Provides SHA claims management, private insurance claims, and Kenya statutory payroll.
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+## What's included
+
+### Doctypes
+- **SHA Claim** — tracks SHA (Social Health Authority) claims from submission to payment, including partial payments and rejections
+- **Private Insurance Claim** — parallel workflow for private insurers (CIC, KU Scheme)
+
+### Server Scripts (automations)
+- **Auto Create Invoice on SHA Claim Save** — creates and submits a Sales Invoice when a claim is saved
+- **Write Off Rejected SHA Claims** — posts a Journal Entry when a claim has a rejected amount
+- **Update SHA Claim on Payment** — increments `amount_paid` when a Payment Entry is submitted
+- Same three scripts mirrored for Private Insurance Claims
+
+### Reports
+- **SHA Claims Aging** — aging buckets (0-30, 31-60, 61-90, 91-120, 120+) with partial payment logic
+- **PIC Claims Aging** — same for private insurance claims
+
+### Payroll components (Kenya statutory)
+- Basic Salary, House Allowance, Transport Allowance, Other Allowances
+- PAYE (with Income Tax Slab — Kenya PAYE 2026 bands)
+- NSSF Tier I, NSSF Tier II, NSSF Employer
+- SHIF, Housing Levy, Housing Levy Employer
+
+### Custom Fields
+- SHA Claim: `amount_paid`, `rejected_amount`, `writeoff_journal_entry`
+- Private Insurance Claim: full field set
+
+## Installation
 
 ```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app hospital_custom
-```
-
-### Contributing
-
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
-
-```bash
-cd apps/hospital_custom
-pre-commit install
-```
-
-Pre-commit is configured to use the following tools for checking and formatting your code:
-
-- ruff
-- eslint
-- prettier
-- pyupgrade
-
-### CI
-
-This app can use GitHub Actions for CI. The following workflows are configured:
-
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
-- Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
-
-
-### License
-
-mit
+cd ~/frappe-bench
+bench get-app hospital_custom https://github.com/jobz29389-source/ERPNEXT-FINANCE.git --branch develop
+bench --site your-site.local install-app hospital_custom
+bench --site your-site.local migrate
