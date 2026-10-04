@@ -1,0 +1,106 @@
+[
+ {
+  "accounts": [
+   {
+    "account": "Depreciation - SSUH",
+    "parent": "Monthly Depreciation",
+    "parentfield": "accounts",
+    "parenttype": "Journal Entry Template"
+   },
+   {
+    "account": "Accumulated Depreciation - SSUH",
+    "parent": "Monthly Depreciation",
+    "parentfield": "accounts",
+    "parenttype": "Journal Entry Template"
+   }
+  ],
+  "company": "St. Scholastica Uzima Hospital",
+  "docstatus": 0,
+  "doctype": "Journal Entry Template",
+  "is_opening": "No",
+  "modified": "2026-10-04 18:47:07.689688",
+  "multi_currency": 0,
+  "name": "Monthly Depreciation",
+  "naming_series": "JET-.YYYY.-",
+  "template_title": "Monthly Depreciation",
+  "voucher_type": "Journal Entry"
+ },
+ {
+  "accounts": [
+   {
+    "account": "Salaries - SSUH",
+    "parent": "Monthly Salary Accrual",
+    "parentfield": "accounts",
+    "parenttype": "Journal Entry Template"
+   },
+   {
+    "account": "Salary Payable - SSUH",
+    "parent": "Monthly Salary Accrual",
+    "parentfield": "accounts",
+    "parenttype": "Journal Entry Template"
+   }
+  ],
+  "company": "St. Scholastica Uzima Hospital",
+  "docstatus": 0,
+  "doctype": "Journal Entry Template",
+  "is_opening": "No",
+  "modified": "2026-10-04 18:47:07.761811",
+  "multi_currency": 0,
+  "name": "Monthly Salary Accrual",
+  "naming_series": "JET-.YYYY.-",
+  "template_title": "Monthly Salary Accrual",
+  "voucher_type": "Journal Entry"
+ },
+ {
+  "accounts": [
+   {
+    "account": "Finance Costs - SSUH",
+    "parent": "Monthly Bank Charges",
+    "parentfield": "accounts",
+    "parenttype": "Journal Entry Template"
+   },
+   {
+    "account": "Bank Account - SSUH",
+    "parent": "Monthly Bank Charges",
+    "parentfield": "accounts",
+    "parenttype": "Journal Entry Template"
+   }
+  ],
+  "company": "St. Scholastica Uzima Hospital",
+  "docstatus": 0,
+  "doctype": "Journal Entry Template",
+  "is_opening": "No",
+  "modified": "2026-10-04 18:47:07.785977",
+  "multi_currency": 0,
+  "name": "Monthly Bank Charges",
+  "naming_series": "JET-.YYYY.-",
+  "template_title": "Monthly Bank Charges",
+  "voucher_type": "Journal Entry"
+ },
+ {
+  "accounts": [
+   {
+    "account": "Utilities - SSUH",
+    "parent": "Monthly Utilities Accrual",
+    "parentfield": "accounts",
+    "parenttype": "Journal Entry Template"
+   },
+   {
+    "account": "Accrued Expenses - SSUH",
+    "parent": "Monthly Utilities Accrual",
+    "parentfield": "accounts",
+    "parenttype": "Journal Entry Template"
+   }
+  ],
+  "company": "St. Scholastica Uzima Hospital",
+  "docstatus": 0,
+  "doctype": "Journal Entry Template",
+  "is_opening": "No",
+  "modified": "2026-10-04 18:47:07.807040",
+  "multi_currency": 0,
+  "name": "Monthly Utilities Accrual",
+  "naming_series": "JET-.YYYY.-",
+  "template_title": "Monthly Utilities Accrual",
+  "voucher_type": "Journal Entry"
+ }
+]

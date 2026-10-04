@@ -1,0 +1,64 @@
+[
+ {
+  "accounts": [
+   {
+    "account": "Withholding - SSUH",
+    "company": "St. Scholastica Uzima Hospital",
+    "parent": "WHT - Professional Fees",
+    "parentfield": "accounts",
+    "parenttype": "Tax Withholding Category"
+   }
+  ],
+  "category_name": "WHT - Professional Fees",
+  "consider_party_ledger_amount": 0,
+  "docstatus": 0,
+  "doctype": "Tax Withholding Category",
+  "modified": "2026-10-02 18:58:54.716236",
+  "name": "WHT - Professional Fees",
+  "rates": [
+   {
+    "cumulative_threshold": 0.0,
+    "from_date": "2026-01-01",
+    "parent": "WHT - Professional Fees",
+    "parentfield": "rates",
+    "parenttype": "Tax Withholding Category",
+    "single_threshold": 24000.0,
+    "tax_withholding_rate": 5.0,
+    "to_date": "2026-12-31"
+   }
+  ],
+  "round_off_tax_amount": 0,
+  "tax_on_excess_amount": 0
+ },
+ {
+  "accounts": [
+   {
+    "account": "Withholding - SSUH",
+    "company": "St. Scholastica Uzima Hospital",
+    "parent": "WHT - Contractual Fees",
+    "parentfield": "accounts",
+    "parenttype": "Tax Withholding Category"
+   }
+  ],
+  "category_name": "WHT - Contractual Fees",
+  "consider_party_ledger_amount": 0,
+  "docstatus": 0,
+  "doctype": "Tax Withholding Category",
+  "modified": "2026-10-02 18:58:55.137302",
+  "name": "WHT - Contractual Fees",
+  "rates": [
+   {
+    "cumulative_threshold": 0.0,
+    "from_date": "2026-01-01",
+    "parent": "WHT - Contractual Fees",
+    "parentfield": "rates",
+    "parenttype": "Tax Withholding Category",
+    "single_threshold": 24000.0,
+    "tax_withholding_rate": 3.0,
+    "to_date": "2026-12-31"
+   }
+  ],
+  "round_off_tax_amount": 0,
+  "tax_on_excess_amount": 0
+ }
+]

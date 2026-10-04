@@ -1,0 +1,106 @@
+[
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-10-04 18:24:02.842765",
+  "name": "Due on Receipt",
+  "template_name": "Due on Receipt",
+  "terms": [
+   {
+    "credit_days": 0,
+    "credit_months": 0,
+    "description": "Payment due immediately",
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": null,
+    "parent": "Due on Receipt",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "Due on Receipt"
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-10-04 18:24:02.912199",
+  "name": "SHA 30 Days",
+  "template_name": "SHA 30 Days",
+  "terms": [
+   {
+    "credit_days": 30,
+    "credit_months": 0,
+    "description": "Payment due within 30 days",
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": null,
+    "parent": "SHA 30 Days",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "Net 30"
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-10-04 18:24:02.933083",
+  "name": "CIC 45 Days",
+  "template_name": "CIC 45 Days",
+  "terms": [
+   {
+    "credit_days": 45,
+    "credit_months": 0,
+    "description": "Payment due within 45 days",
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": null,
+    "parent": "CIC 45 Days",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "Net 45"
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-10-04 18:24:02.947375",
+  "name": "KU 30 Days",
+  "template_name": "KU 30 Days",
+  "terms": [
+   {
+    "credit_days": 30,
+    "credit_months": 0,
+    "description": "Payment due within 30 days",
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": null,
+    "parent": "KU 30 Days",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "Net 30"
+   }
+  ]
+ }
+]

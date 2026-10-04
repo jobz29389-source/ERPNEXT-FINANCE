@@ -263,4 +263,9 @@ fixtures = [
     {"dt": "Salary Structure"},
     {"dt": "Customer", "filters": [["name", "in", ["SHA", "CIC Insurance", "Kenyatta University Staff Medical Scheme"]]]},
     {"dt": "Item", "filters": [["name", "like", "SHA %"], ["name", "like", "CIC %"], ["name", "like", "KU %"]]},
+    {"dt": "Cost Center"},
+    {"dt": "Tax Withholding Category"},
+    {"dt": "Journal Entry Template"},
+    {"dt": "Payment Term"},
+    {"dt": "Payment Terms Template"},
 ]
