@@ -268,4 +268,12 @@ fixtures = [
     {"dt": "Journal Entry Template"},
     {"dt": "Payment Term"},
     {"dt": "Payment Terms Template"},
+    {"dt": "Bank"},
+    {"dt": "Bank Account"},
+    {"dt": "Asset Category"},
+    {"dt": "Journal Entry Template"},
+    {"dt": "Payment Term"},
+    {"dt": "Payment Terms Template"},
+    {"dt": "Tax Withholding Category"},
+    {"dt": "Cost Center"},
 ]

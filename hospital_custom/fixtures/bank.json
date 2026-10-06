@@ -1,0 +1,24 @@
+[
+ {
+  "bank_name": "KCB Bank  Kenya",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2026-10-02 16:56:50.499437",
+  "name": "KCB Bank  Kenya",
+  "plaid_access_token": null,
+  "swift_number": "KCBLKENX",
+  "website": null
+ },
+ {
+  "bank_name": "National Bank of Kenya NBK",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2026-10-02 17:01:06.913493",
+  "name": "National Bank of Kenya NBK",
+  "plaid_access_token": null,
+  "swift_number": "NBKEKENX",
+  "website": null
+ }
+]

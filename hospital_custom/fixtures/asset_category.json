@@ -1,0 +1,344 @@
+[
+ {
+  "accounts": [
+   {
+    "accumulated_depreciation_account": "Accumulated Depreciation - SSUH",
+    "capital_work_in_progress_account": null,
+    "company_name": "St. Scholastica Uzima Hospital",
+    "depreciation_expense_account": "Depreciation - SSUH",
+    "fixed_asset_account": "Buildings - SSUH",
+    "parent": "Land",
+    "parentfield": "accounts",
+    "parenttype": "Asset Category"
+   }
+  ],
+  "asset_category_name": "Land",
+  "docstatus": 0,
+  "doctype": "Asset Category",
+  "enable_cwip_accounting": 0,
+  "finance_books": [],
+  "modified": "2026-10-02 18:43:04.097138",
+  "name": "Land",
+  "non_depreciable_category": 0
+ },
+ {
+  "accounts": [
+   {
+    "accumulated_depreciation_account": "Accumulated Depreciation - SSUH",
+    "capital_work_in_progress_account": null,
+    "company_name": "St. Scholastica Uzima Hospital",
+    "depreciation_expense_account": "Depreciation - SSUH",
+    "fixed_asset_account": "Buildings - SSUH",
+    "parent": "Buildings",
+    "parentfield": "accounts",
+    "parenttype": "Asset Category"
+   }
+  ],
+  "asset_category_name": "Buildings",
+  "docstatus": 0,
+  "doctype": "Asset Category",
+  "enable_cwip_accounting": 0,
+  "finance_books": [
+   {
+    "daily_prorata_based": 0,
+    "depreciation_method": "Straight Line",
+    "depreciation_start_date": null,
+    "expected_value_after_useful_life": 0.0,
+    "finance_book": "Default",
+    "frequency_of_depreciation": 12,
+    "parent": "Buildings",
+    "parentfield": "finance_books",
+    "parenttype": "Asset Category",
+    "rate_of_depreciation": 0.0,
+    "salvage_value_percentage": 0.0,
+    "shift_based": 0,
+    "total_number_of_booked_depreciations": 0,
+    "total_number_of_depreciations": 40,
+    "value_after_depreciation": 0.0
+   }
+  ],
+  "modified": "2026-10-02 18:46:18.132295",
+  "name": "Buildings",
+  "non_depreciable_category": 0
+ },
+ {
+  "accounts": [
+   {
+    "accumulated_depreciation_account": "Accumulated Depreciation - SSUH",
+    "capital_work_in_progress_account": null,
+    "company_name": "St. Scholastica Uzima Hospital",
+    "depreciation_expense_account": "Depreciation - SSUH",
+    "fixed_asset_account": "Medical equipment - SSUH",
+    "parent": "Medical Equipment",
+    "parentfield": "accounts",
+    "parenttype": "Asset Category"
+   }
+  ],
+  "asset_category_name": "Medical Equipment",
+  "docstatus": 0,
+  "doctype": "Asset Category",
+  "enable_cwip_accounting": 0,
+  "finance_books": [
+   {
+    "daily_prorata_based": 0,
+    "depreciation_method": "Straight Line",
+    "depreciation_start_date": null,
+    "expected_value_after_useful_life": 0.0,
+    "finance_book": "Default",
+    "frequency_of_depreciation": 12,
+    "parent": "Medical Equipment",
+    "parentfield": "finance_books",
+    "parenttype": "Asset Category",
+    "rate_of_depreciation": 0.0,
+    "salvage_value_percentage": 0.0,
+    "shift_based": 0,
+    "total_number_of_booked_depreciations": 0,
+    "total_number_of_depreciations": 7,
+    "value_after_depreciation": 0.0
+   }
+  ],
+  "modified": "2026-10-02 18:46:18.220069",
+  "name": "Medical Equipment",
+  "non_depreciable_category": 0
+ },
+ {
+  "accounts": [
+   {
+    "accumulated_depreciation_account": "Accumulated Depreciation - SSUH",
+    "capital_work_in_progress_account": null,
+    "company_name": "St. Scholastica Uzima Hospital",
+    "depreciation_expense_account": "Depreciation - SSUH",
+    "fixed_asset_account": "Plants and Machineries - SSUH",
+    "parent": "Plant and Machinery",
+    "parentfield": "accounts",
+    "parenttype": "Asset Category"
+   }
+  ],
+  "asset_category_name": "Plant and Machinery",
+  "docstatus": 0,
+  "doctype": "Asset Category",
+  "enable_cwip_accounting": 0,
+  "finance_books": [
+   {
+    "daily_prorata_based": 0,
+    "depreciation_method": "Straight Line",
+    "depreciation_start_date": null,
+    "expected_value_after_useful_life": 0.0,
+    "finance_book": "Default",
+    "frequency_of_depreciation": 12,
+    "parent": "Plant and Machinery",
+    "parentfield": "finance_books",
+    "parenttype": "Asset Category",
+    "rate_of_depreciation": 0.0,
+    "salvage_value_percentage": 0.0,
+    "shift_based": 0,
+    "total_number_of_booked_depreciations": 0,
+    "total_number_of_depreciations": 10,
+    "value_after_depreciation": 0.0
+   }
+  ],
+  "modified": "2026-10-02 18:46:18.316077",
+  "name": "Plant and Machinery",
+  "non_depreciable_category": 0
+ },
+ {
+  "accounts": [
+   {
+    "accumulated_depreciation_account": "Accumulated Depreciation - SSUH",
+    "capital_work_in_progress_account": null,
+    "company_name": "St. Scholastica Uzima Hospital",
+    "depreciation_expense_account": "Depreciation - SSUH",
+    "fixed_asset_account": "Electronic Equipments - SSUH",
+    "parent": "ICT Equipment",
+    "parentfield": "accounts",
+    "parenttype": "Asset Category"
+   }
+  ],
+  "asset_category_name": "ICT Equipment",
+  "docstatus": 0,
+  "doctype": "Asset Category",
+  "enable_cwip_accounting": 0,
+  "finance_books": [
+   {
+    "daily_prorata_based": 0,
+    "depreciation_method": "Straight Line",
+    "depreciation_start_date": null,
+    "expected_value_after_useful_life": 0.0,
+    "finance_book": "Default",
+    "frequency_of_depreciation": 12,
+    "parent": "ICT Equipment",
+    "parentfield": "finance_books",
+    "parenttype": "Asset Category",
+    "rate_of_depreciation": 0.0,
+    "salvage_value_percentage": 0.0,
+    "shift_based": 0,
+    "total_number_of_booked_depreciations": 0,
+    "total_number_of_depreciations": 3,
+    "value_after_depreciation": 0.0
+   }
+  ],
+  "modified": "2026-10-02 18:46:18.374346",
+  "name": "ICT Equipment",
+  "non_depreciable_category": 0
+ },
+ {
+  "accounts": [
+   {
+    "accumulated_depreciation_account": "Accumulated Depreciation - SSUH",
+    "capital_work_in_progress_account": null,
+    "company_name": "St. Scholastica Uzima Hospital",
+    "depreciation_expense_account": "Depreciation - SSUH",
+    "fixed_asset_account": "Electronic Equipments - SSUH",
+    "parent": "HVAC Equipment",
+    "parentfield": "accounts",
+    "parenttype": "Asset Category"
+   }
+  ],
+  "asset_category_name": "HVAC Equipment",
+  "docstatus": 0,
+  "doctype": "Asset Category",
+  "enable_cwip_accounting": 0,
+  "finance_books": [
+   {
+    "daily_prorata_based": 0,
+    "depreciation_method": "Straight Line",
+    "depreciation_start_date": null,
+    "expected_value_after_useful_life": 0.0,
+    "finance_book": "Default",
+    "frequency_of_depreciation": 12,
+    "parent": "HVAC Equipment",
+    "parentfield": "finance_books",
+    "parenttype": "Asset Category",
+    "rate_of_depreciation": 0.0,
+    "salvage_value_percentage": 0.0,
+    "shift_based": 0,
+    "total_number_of_booked_depreciations": 0,
+    "total_number_of_depreciations": 5,
+    "value_after_depreciation": 0.0
+   }
+  ],
+  "modified": "2026-10-02 18:46:18.452500",
+  "name": "HVAC Equipment",
+  "non_depreciable_category": 0
+ },
+ {
+  "accounts": [
+   {
+    "accumulated_depreciation_account": "Accumulated Depreciation - SSUH",
+    "capital_work_in_progress_account": null,
+    "company_name": "St. Scholastica Uzima Hospital",
+    "depreciation_expense_account": "Depreciation - SSUH",
+    "fixed_asset_account": "Vehicles - SSUH",
+    "parent": "Vehicles",
+    "parentfield": "accounts",
+    "parenttype": "Asset Category"
+   }
+  ],
+  "asset_category_name": "Vehicles",
+  "docstatus": 0,
+  "doctype": "Asset Category",
+  "enable_cwip_accounting": 0,
+  "finance_books": [
+   {
+    "daily_prorata_based": 0,
+    "depreciation_method": "Written Down Value",
+    "depreciation_start_date": null,
+    "expected_value_after_useful_life": 0.0,
+    "finance_book": "Default",
+    "frequency_of_depreciation": 12,
+    "parent": "Vehicles",
+    "parentfield": "finance_books",
+    "parenttype": "Asset Category",
+    "rate_of_depreciation": 0.0,
+    "salvage_value_percentage": 0.0,
+    "shift_based": 0,
+    "total_number_of_booked_depreciations": 0,
+    "total_number_of_depreciations": 5,
+    "value_after_depreciation": 0.0
+   }
+  ],
+  "modified": "2026-10-02 18:46:18.497642",
+  "name": "Vehicles",
+  "non_depreciable_category": 0
+ },
+ {
+  "accounts": [
+   {
+    "accumulated_depreciation_account": "Accumulated Depreciation - SSUH",
+    "capital_work_in_progress_account": null,
+    "company_name": "St. Scholastica Uzima Hospital",
+    "depreciation_expense_account": "Depreciation - SSUH",
+    "fixed_asset_account": "Furniture - SSUH",
+    "parent": "Furniture and Fittings",
+    "parentfield": "accounts",
+    "parenttype": "Asset Category"
+   }
+  ],
+  "asset_category_name": "Furniture and Fittings",
+  "docstatus": 0,
+  "doctype": "Asset Category",
+  "enable_cwip_accounting": 0,
+  "finance_books": [
+   {
+    "daily_prorata_based": 0,
+    "depreciation_method": "Straight Line",
+    "depreciation_start_date": null,
+    "expected_value_after_useful_life": 0.0,
+    "finance_book": "Default",
+    "frequency_of_depreciation": 12,
+    "parent": "Furniture and Fittings",
+    "parentfield": "finance_books",
+    "parenttype": "Asset Category",
+    "rate_of_depreciation": 0.0,
+    "salvage_value_percentage": 0.0,
+    "shift_based": 0,
+    "total_number_of_booked_depreciations": 0,
+    "total_number_of_depreciations": 10,
+    "value_after_depreciation": 0.0
+   }
+  ],
+  "modified": "2026-10-02 18:46:18.576891",
+  "name": "Furniture and Fittings",
+  "non_depreciable_category": 0
+ },
+ {
+  "accounts": [
+   {
+    "accumulated_depreciation_account": "Accumulated Depreciation - SSUH",
+    "capital_work_in_progress_account": null,
+    "company_name": "St. Scholastica Uzima Hospital",
+    "depreciation_expense_account": "Depreciation - SSUH",
+    "fixed_asset_account": "Office Equipments - SSUH",
+    "parent": "Office Equipment",
+    "parentfield": "accounts",
+    "parenttype": "Asset Category"
+   }
+  ],
+  "asset_category_name": "Office Equipment",
+  "docstatus": 0,
+  "doctype": "Asset Category",
+  "enable_cwip_accounting": 0,
+  "finance_books": [
+   {
+    "daily_prorata_based": 0,
+    "depreciation_method": "Straight Line",
+    "depreciation_start_date": null,
+    "expected_value_after_useful_life": 0.0,
+    "finance_book": "Default",
+    "frequency_of_depreciation": 12,
+    "parent": "Office Equipment",
+    "parentfield": "finance_books",
+    "parenttype": "Asset Category",
+    "rate_of_depreciation": 0.0,
+    "salvage_value_percentage": 0.0,
+    "shift_based": 0,
+    "total_number_of_booked_depreciations": 0,
+    "total_number_of_depreciations": 5,
+    "value_after_depreciation": 0.0
+   }
+  ],
+  "modified": "2026-10-02 18:46:18.637560",
+  "name": "Office Equipment",
+  "non_depreciable_category": 0
+ }
+]
