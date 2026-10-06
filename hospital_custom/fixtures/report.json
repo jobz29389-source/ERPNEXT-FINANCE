@@ -1,0 +1,453 @@
+[
+ {
+  "add_total_row": 1,
+  "add_translate_data": 0,
+  "columns": [],
+  "disable_prepared_report_automation": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "doctype_to_sync": [],
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-09-29 16:49:38.825599",
+  "module": "Hospital Custom",
+  "name": "SHA Claims Aging",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    name AS \"Claim:Link/SHA Claim:120\",\r\n    patient_name AS \"Patient:Data:150\",\r\n    service_type AS \"Service:Data:100\",\r\n    status AS \"Status:Data:100\",\r\n    IFNULL(submission_date, date_of_service) AS \"Aged From:Date:100\",\r\n    DATEDIFF(CURDATE(), IFNULL(submission_date, date_of_service)) AS \"Age (Days):Int:80\",\r\n    (amount_claimed - IFNULL(amount_paid, 0) - IFNULL(rejected_amount, 0)) AS \"Outstanding:Currency:110\",\r\n    amount_approved AS \"Approved:Currency:110\",\r\n    amount_paid AS \"Paid:Currency:110\",\r\n    rejected_amount AS \"Rejected:Currency:110\",\r\n    IF(DATEDIFF(CURDATE(), IFNULL(submission_date, date_of_service)) <= 30, (amount_claimed - IFNULL(amount_paid, 0) - IFNULL(rejected_amount, 0)), 0) AS \"0-30:Currency:100\",\r\n    IF(DATEDIFF(CURDATE(), IFNULL(submission_date, date_of_service)) BETWEEN 31 AND 60, (amount_claimed - IFNULL(amount_paid, 0) - IFNULL(rejected_amount, 0)), 0) AS \"31-60:Currency:100\",\r\n    IF(DATEDIFF(CURDATE(), IFNULL(submission_date, date_of_service)) BETWEEN 61 AND 90, (amount_claimed - IFNULL(amount_paid, 0) - IFNULL(rejected_amount, 0)), 0) AS \"61-90:Currency:100\",\r\n    IF(DATEDIFF(CURDATE(), IFNULL(submission_date, date_of_service)) BETWEEN 91 AND 120, (amount_claimed - IFNULL(amount_paid, 0) - IFNULL(rejected_amount, 0)), 0) AS \"91-120:Currency:100\",\r\n    IF(DATEDIFF(CURDATE(), IFNULL(submission_date, date_of_service)) > 120, (amount_claimed - IFNULL(amount_paid, 0) - IFNULL(rejected_amount, 0)), 0) AS \"120+:Currency:100\"\r\nFROM `tabSHA Claim`\r\nWHERE (amount_claimed - IFNULL(amount_paid, 0) - IFNULL(rejected_amount, 0)) > 0\r\nORDER BY 6 DESC",
+  "ref_doctype": "SHA Claim",
+  "reference_report": null,
+  "report_name": "SHA Claims Aging",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "SHA Claims Aging",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   }
+  ],
+  "snapshot_report": 0,
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disable_prepared_report_automation": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "doctype_to_sync": [],
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-10-01 14:43:55.177799",
+  "module": "Hospital Custom",
+  "name": "PIC Claims Aging",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    name AS \"Claim:Link/Private Insurance Claim:120\",\r\n    patient_name AS \"Patient:Data:150\",\r\n    insurer AS \"Insurer:Link/Customer:150\",\r\n    service_type AS \"Service:Data:100\",\r\n    status AS \"Status:Data:100\",\r\n    IFNULL(submission_date, date_of_service) AS \"Aged From:Date:100\",\r\n    DATEDIFF(CURDATE(), IFNULL(submission_date, date_of_service)) AS \"Age (Days):Int:80\",\r\n    (amount_claimed - IFNULL(amount_paid, 0) - IFNULL(rejected_amount, 0)) AS \"Outstanding:Currency:110\",\r\n    amount_approved AS \"Approved:Currency:110\",\r\n    amount_paid AS \"Paid:Currency:110\",\r\n    rejected_amount AS \"Rejected:Currency:110\",\r\n    IF(DATEDIFF(CURDATE(), IFNULL(submission_date, date_of_service)) <= 30, (amount_claimed - IFNULL(amount_paid, 0) - IFNULL(rejected_amount, 0)), 0) AS \"0-30:Currency:100\",\r\n    IF(DATEDIFF(CURDATE(), IFNULL(submission_date, date_of_service)) BETWEEN 31 AND 60, (amount_claimed - IFNULL(amount_paid, 0) - IFNULL(rejected_amount, 0)), 0) AS \"31-60:Currency:100\",\r\n    IF(DATEDIFF(CURDATE(), IFNULL(submission_date, date_of_service)) BETWEEN 61 AND 90, (amount_claimed - IFNULL(amount_paid, 0) - IFNULL(rejected_amount, 0)), 0) AS \"61-90:Currency:100\",\r\n    IF(DATEDIFF(CURDATE(), IFNULL(submission_date, date_of_service)) BETWEEN 91 AND 120, (amount_claimed - IFNULL(amount_paid, 0) - IFNULL(rejected_amount, 0)), 0) AS \"91-120:Currency:100\",\r\n    IF(DATEDIFF(CURDATE(), IFNULL(submission_date, date_of_service)) > 120, (amount_claimed - IFNULL(amount_paid, 0) - IFNULL(rejected_amount, 0)), 0) AS \"120+:Currency:100\"\r\nFROM `tabPrivate Insurance Claim`\r\nWHERE (amount_claimed - IFNULL(amount_paid, 0) - IFNULL(rejected_amount, 0)) > 0\r\nORDER BY 6 DESC",
+  "ref_doctype": "Private Insurance Claim",
+  "reference_report": null,
+  "report_name": "PIC Claims Aging",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "PIC Claims Aging",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   },
+   {
+    "parent": "PIC Claims Aging",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "snapshot_report": 0,
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disable_prepared_report_automation": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "doctype_to_sync": [],
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-10-02 14:28:10.179535",
+  "module": "Hospital Custom",
+  "name": "Monthly Revenue By Service Type",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    pe.posting_date AS \"Date:Date:100\",\r\n    pe.mode_of_payment AS \"Payment Mode:Link/Mode of Payment:150\",\r\n    pe.paid_from AS \"Received In:Link/Account:200\",\r\n    pe.party AS \"Party:Data:150\",\r\n    COUNT(pe.name) AS \"Transactions:Int:100\",\r\n    SUM(pe.paid_amount) AS \"Total:Currency:130\"\r\nFROM `tabPayment Entry` pe\r\nWHERE pe.docstatus = 1\r\n    AND pe.payment_type = 'Receive'\r\n    AND pe.company = 'St. Scholastica Uzima Hospital'\r\n    AND pe.posting_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)\r\nGROUP BY pe.posting_date, pe.mode_of_payment, pe.paid_from, pe.party\r\nORDER BY pe.posting_date DESC, pe.mode_of_payment, pe.party",
+  "ref_doctype": "Sales Invoice",
+  "reference_report": null,
+  "report_name": "Monthly Revenue By Service Type",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Monthly Revenue By Service Type",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Monthly Revenue By Service Type",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "snapshot_report": 0,
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disable_prepared_report_automation": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "doctype_to_sync": [],
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-10-02 14:32:23.628784",
+  "module": "Hospital Custom",
+  "name": "Debtor Aging",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    si.customer AS \"Customer:Link/Customer:200\",\r\n    si.name AS \"Invoice:Link/Sales Invoice:180\",\r\n    si.posting_date AS \"Date:Date:100\",\r\n    si.due_date AS \"Due:Date:100\",\r\n    DATEDIFF(CURDATE(), si.due_date) AS \"Days Overdue:Int:100\",\r\n    si.outstanding_amount AS \"Outstanding:Currency:130\",\r\n    CASE\r\n        WHEN DATEDIFF(CURDATE(), si.due_date) <= 0 THEN 'Current'\r\n        WHEN DATEDIFF(CURDATE(), si.due_date) BETWEEN 1 AND 30 THEN '1-30'\r\n        WHEN DATEDIFF(CURDATE(), si.due_date) BETWEEN 31 AND 60 THEN '31-60'\r\n        WHEN DATEDIFF(CURDATE(), si.due_date) BETWEEN 61 AND 90 THEN '61-90'\r\n        WHEN DATEDIFF(CURDATE(), si.due_date) BETWEEN 91 AND 120 THEN '91-120'\r\n        ELSE '120+'\r\n    END AS \"Bucket:Data:100\"\r\nFROM `tabSales Invoice` si\r\nWHERE si.docstatus = 1\r\n    AND si.outstanding_amount > 0\r\n    AND si.company = 'St. Scholastica Uzima Hospital'\r\n    AND si.customer NOT IN ('SHA', 'CIC Insurance', 'Kenyatta University Staff Medical Scheme')\r\nORDER BY si.customer, si.posting_date",
+  "ref_doctype": "Sales Invoice",
+  "reference_report": null,
+  "report_name": "Debtor Aging",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Debtor Aging",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Debtor Aging",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "snapshot_report": 0,
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disable_prepared_report_automation": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "doctype_to_sync": [],
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-10-02 14:37:49.330303",
+  "module": "Hospital Custom",
+  "name": "Daily Cash Report",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    pe.posting_date AS \"Date:Date:100\",\r\n    pe.mode_of_payment AS \"Payment Mode:Link/Mode of Payment:150\",\r\n    pe.paid_from AS \"Received In:Link/Account:200\",\r\n    pe.party AS \"Party:Data:150\",\r\n    COUNT(pe.name) AS \"Transactions:Int:100\",\r\n    SUM(pe.paid_amount) AS \"Total:Currency:130\"\r\nFROM `tabPayment Entry` pe\r\nWHERE pe.docstatus = 1\r\n    AND pe.payment_type = 'Receive'\r\n    AND pe.company = 'St. Scholastica Uzima Hospital'\r\n    AND pe.posting_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)\r\nGROUP BY pe.posting_date, pe.mode_of_payment, pe.paid_from, pe.party\r\nORDER BY pe.posting_date DESC, pe.mode_of_payment, pe.party",
+  "ref_doctype": "Payment Entry",
+  "reference_report": null,
+  "report_name": "Daily Cash Report",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Daily Cash Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Daily Cash Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   }
+  ],
+  "snapshot_report": 0,
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disable_prepared_report_automation": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "doctype_to_sync": [],
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-10-02 14:44:32.667394",
+  "module": "Hospital Custom",
+  "name": "Creditor Aging",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    pi.supplier AS \"Supplier:Link/Supplier:200\",\r\n    pi.name AS \"Invoice:Link/Purchase Invoice:180\",\r\n    pi.posting_date AS \"Date:Date:100\",\r\n    pi.due_date AS \"Due:Date:100\",\r\n    DATEDIFF(CURDATE(), pi.due_date) AS \"Days Overdue:Int:100\",\r\n    pi.outstanding_amount AS \"Outstanding:Currency:130\",\r\n    CASE\r\n        WHEN DATEDIFF(CURDATE(), pi.due_date) <= 0 THEN 'Current'\r\n        WHEN DATEDIFF(CURDATE(), pi.due_date) BETWEEN 1 AND 30 THEN '1-30'\r\n        WHEN DATEDIFF(CURDATE(), pi.due_date) BETWEEN 31 AND 60 THEN '31-60'\r\n        WHEN DATEDIFF(CURDATE(), pi.due_date) BETWEEN 61 AND 90 THEN '61-90'\r\n        WHEN DATEDIFF(CURDATE(), pi.due_date) BETWEEN 91 AND 120 THEN '91-120'\r\n        ELSE '120+'\r\n    END AS \"Bucket:Data:100\"\r\nFROM `tabPurchase Invoice` pi\r\nWHERE pi.docstatus = 1\r\n    AND pi.outstanding_amount > 0\r\n    AND pi.company = 'St. Scholastica Uzima Hospital'\r\nORDER BY pi.supplier, pi.posting_date",
+  "ref_doctype": "Purchase Invoice",
+  "reference_report": null,
+  "report_name": "Creditor Aging",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Creditor Aging",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Creditor Aging",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "Creditor Aging",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Creditor Aging",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Auditor"
+   }
+  ],
+  "snapshot_report": 0,
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disable_prepared_report_automation": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "doctype_to_sync": [],
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-10-02 14:49:35.934635",
+  "module": "Hospital Custom",
+  "name": "Monthly Payer Mix",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    DATE_FORMAT(si.posting_date, '%%Y-%%m') AS \"Month:Data:80\",\r\n    CASE\r\n        WHEN sii.income_account LIKE 'SHA Revenue%%' THEN 'SHA'\r\n        WHEN sii.income_account LIKE 'Private Insurance%%' THEN 'Private Insurance'\r\n        ELSE 'Cash/Other'\r\n    END AS \"Payer Type:Data:150\",\r\n    SUM(sii.amount) AS \"Revenue:Currency:130\",\r\n    COUNT(DISTINCT si.name) AS \"Invoices:Int:100\"\r\nFROM `tabSales Invoice` si\r\nINNER JOIN `tabSales Invoice Item` sii ON sii.parent = si.name\r\nWHERE si.docstatus = 1\r\n    AND si.company = 'St. Scholastica Uzima Hospital'\r\n    AND si.posting_date >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)\r\nGROUP BY DATE_FORMAT(si.posting_date, '%%Y-%%m'),\r\n    CASE\r\n        WHEN sii.income_account LIKE 'SHA Revenue%%' THEN 'SHA'\r\n        WHEN sii.income_account LIKE 'Private Insurance%%' THEN 'Private Insurance'\r\n        ELSE 'Cash/Other'\r\n    END\r\nORDER BY DATE_FORMAT(si.posting_date, '%%Y-%%m') DESC, \"Payer Type:Data:150\"",
+  "ref_doctype": "Sales Invoice",
+  "reference_report": null,
+  "report_name": "Monthly Payer Mix",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Monthly Payer Mix",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Monthly Payer Mix",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "snapshot_report": 0,
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disable_prepared_report_automation": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "doctype_to_sync": [],
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-10-02 15:02:00.802297",
+  "module": "Hospital Custom",
+  "name": "Claim Status Summary",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    'SHA' AS \"Claim Type:Data:100\",\r\n    status AS \"Status:Data:120\",\r\n    COUNT(name) AS \"Count:Int:80\",\r\n    SUM(amount_claimed) AS \"Claimed:Currency:130\",\r\n    SUM(IFNULL(amount_approved, 0)) AS \"Approved:Currency:130\",\r\n    SUM(IFNULL(amount_paid, 0)) AS \"Paid:Currency:130\",\r\n    SUM(IFNULL(rejected_amount, 0)) AS \"Rejected:Currency:130\"\r\nFROM `tabSHA Claim`\r\nGROUP BY status\r\n\r\nUNION ALL\r\n\r\nSELECT\r\n    'Private Insurance' AS \"Claim Type:Data:100\",\r\n    status AS \"Status:Data:120\",\r\n    COUNT(name) AS \"Count:Int:80\",\r\n    SUM(amount_claimed) AS \"Claimed:Currency:130\",\r\n    SUM(IFNULL(amount_approved, 0)) AS \"Approved:Currency:130\",\r\n    SUM(IFNULL(amount_paid, 0)) AS \"Paid:Currency:130\",\r\n    SUM(IFNULL(rejected_amount, 0)) AS \"Rejected:Currency:130\"\r\nFROM `tabPrivate Insurance Claim`\r\nGROUP BY status\r\n\r\nORDER BY 1, 2",
+  "ref_doctype": "SHA Claim",
+  "reference_report": null,
+  "report_name": "Claim Status Summary",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Claim Status Summary",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   }
+  ],
+  "snapshot_report": 0,
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disable_prepared_report_automation": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "doctype_to_sync": [],
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-10-02 15:06:11.894528",
+  "module": "Hospital Custom",
+  "name": "Invoice Summary by Customer",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    si.customer AS \"Customer:Link/Customer:200\",\r\n    COUNT(si.name) AS \"Total Invoices:Int:120\",\r\n    SUM(si.grand_total) AS \"Total Billed:Currency:150\",\r\n    SUM(si.outstanding_amount) AS \"Outstanding:Currency:150\",\r\n    SUM(si.grand_total - si.outstanding_amount) AS \"Paid:Currency:150\"\r\nFROM `tabSales Invoice` si\r\nWHERE si.docstatus = 1\r\n    AND si.company = 'St. Scholastica Uzima Hospital'\r\nGROUP BY si.customer\r\nORDER BY SUM(si.grand_total) DESC",
+  "ref_doctype": "Sales Invoice",
+  "reference_report": null,
+  "report_name": "Invoice Summary by Customer",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Invoice Summary by Customer",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Invoice Summary by Customer",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "snapshot_report": 0,
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disable_prepared_report_automation": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "doctype_to_sync": [],
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-10-02 15:09:10.593794",
+  "module": "Hospital Custom",
+  "name": "Monthly Revenue Trend",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    DATE_FORMAT(si.posting_date, '%%Y-%%m') AS \"Month:Data:80\",\r\n    COUNT(DISTINCT si.name) AS \"Invoices:Int:100\",\r\n    SUM(si.grand_total) AS \"Gross Revenue:Currency:150\",\r\n    SUM(si.grand_total - si.outstanding_amount) AS \"Collected:Currency:150\",\r\n    SUM(si.outstanding_amount) AS \"Outstanding:Currency:150\"\r\nFROM `tabSales Invoice` si\r\nWHERE si.docstatus = 1\r\n    AND si.company = 'St. Scholastica Uzima Hospital'\r\n    AND si.posting_date >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)\r\nGROUP BY DATE_FORMAT(si.posting_date, '%%Y-%%m')\r\nORDER BY DATE_FORMAT(si.posting_date, '%%Y-%%m') DESC",
+  "ref_doctype": "Sales Invoice",
+  "reference_report": null,
+  "report_name": "Monthly Revenue Trend",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Monthly Revenue Trend",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Monthly Revenue Trend",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "snapshot_report": 0,
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disable_prepared_report_automation": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "doctype_to_sync": [],
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-10-02 15:19:26.961718",
+  "module": "Hospital Custom",
+  "name": "Supplier  Payment Summary",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    pe.party AS \"Supplier:Link/Supplier:200\",\r\n    DATE_FORMAT(pe.posting_date, '%%Y-%%m') AS \"Month:Data:80\",\r\n    pe.mode_of_payment AS \"Payment Mode:Link/Mode of Payment:150\",\r\n    COUNT(pe.name) AS \"Payments:Int:100\",\r\n    SUM(pe.paid_amount) AS \"Amount:Currency:150\"\r\nFROM `tabPayment Entry` pe\r\nWHERE pe.docstatus = 1\r\n    AND pe.payment_type = 'Pay'\r\n    AND pe.party_type = 'Supplier'\r\n    AND pe.company = 'St. Scholastica Uzima Hospital'\r\n    AND pe.posting_date >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)\r\nGROUP BY pe.party, DATE_FORMAT(pe.posting_date, '%%Y-%%m'), pe.mode_of_payment\r\nORDER BY pe.posting_date DESC, pe.party",
+  "ref_doctype": "Payment Entry",
+  "reference_report": null,
+  "report_name": "Supplier  Payment Summary",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Supplier  Payment Summary",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Supplier  Payment Summary",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   }
+  ],
+  "snapshot_report": 0,
+  "timeout": 0
+ }
+]
